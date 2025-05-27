@@ -24,7 +24,7 @@
     "@reduxjs/toolkit": "^2.8.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
+    "date-fns": "^3.6.0",
     "framer-motion": "^12.11.0",
     "google-libphonenumber": "^3.2.40",
     "input-otp": "^1.4.2",
