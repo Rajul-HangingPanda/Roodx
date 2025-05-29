@@ -13,7 +13,7 @@ const actions = [
 
 export default function PostInputCard() {
   return (
-    <section className="bg-[#000000] dark:bg-[#111]  p-6 w-4/5 mt-4 mb-8 border border-[#0DE03E] shadow-lg">
+    <section className="bg-[#000000] dark:bg-[#111]  p-6 w-4/5 md:mt-4 mt-14 mb-8 border border-[#0DE03E] shadow-lg">
       <div className="flex items-center gap-4 mb-4">
         <Avatar>
           <AvatarImage src="/images/user1.png" alt="User" />
