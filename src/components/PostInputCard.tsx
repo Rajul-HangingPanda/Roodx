@@ -13,7 +13,7 @@ const actions = [
 
 export default function PostInputCard() {
   return (
-    <section className="bg-[#000000] dark:bg-[#111]  p-6 w-4/5 md:mt-4 mt-14 mb-8 border border-[#0DE03E] shadow-lg">
+    <section className="bg-[#000000] dark:bg-[#111] p-6 w-full md:w-4/5 md:mt-4 mt-14 mb-8 border border-[#0DE03E] shadow-lg">
       <div className="flex items-center gap-4 mb-4">
         <Avatar>
           <AvatarImage src="/images/user1.png" alt="User" />
@@ -25,9 +25,14 @@ export default function PostInputCard() {
           className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-gray-400 text-base px-2 py-2"
         />
       </div>
-      <div className="flex flex-wrap gap-2 border-t border-gray-800 pt-4">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:flex sm:flex-wrap gap-2 border-t border-gray-800 pt-4">
         {actions.map(({ label, img }) => (
-          <Button key={label} variant="ghost" size="sm" className="text-gray-300 hover:text-white flex items-center gap-2">
+          <Button 
+            key={label} 
+            variant="ghost" 
+            size="sm" 
+            className="text-gray-300 hover:text-white flex items-center gap-2 justify-start"
+          >
             <img src={img} alt={label} className="size-5 rounded" />
             <span className="text-sm text-[#cccccc] font-medium">{label}</span>
           </Button>

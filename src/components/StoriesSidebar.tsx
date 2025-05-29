@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 import { Menu } from 'lucide-react';
 
@@ -14,16 +14,39 @@ const stories = [
 
 export default function StoriesSidebar() {
   const [isOpen, setIsOpen] = useState(false);
+  const sidebarRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        isOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
-    <div className="p-2">
+    <div className="md:px-2 lg:px-4">
       <button
+        ref={buttonRef}
         className="md:hidden fixed top-[64px] left-0 z-50 p-2 bg-[#151515] text-white rounded-md shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         <Menu className="size-6" />
       </button>
       <aside
+        ref={sidebarRef}
         className={`
           bg-[#151515] dark:bg-[#111] p-4 text-white border border-[#0DE03E] md:mt-4 mt-28 shadow-lg transition-transform duration-300 ease-in-out
           fixed top-0 left-0 h-full z-40 w-64
