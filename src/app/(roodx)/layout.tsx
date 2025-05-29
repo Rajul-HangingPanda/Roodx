@@ -27,7 +27,7 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
                 <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" /> */}
             </div>
           </SidebarInset>
-          <SidebarRight side="right" />
+          {/* <SidebarRight side="right" /> */}
         </div>
       </SidebarProvider>
     </div>
