@@ -150,7 +150,7 @@ function Sidebar({
 
   if (collapsible === 'none') {
     return (
-      <div data-slot="sidebar" className={cn('bg-sidebar text-sidebar-foreground flex h-full w-(--sidebar-width) flex-col', className)} {...props}>
+      <div data-slot="sidebar" className={cn('bg-sidebar text-sidebar-foreground flex h-[500px] w-(--sidebar-width) flex-col', className)} {...props}>
         {children}
       </div>
     );

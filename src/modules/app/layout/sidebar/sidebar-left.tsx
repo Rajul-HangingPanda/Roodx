@@ -29,6 +29,11 @@ const data = {
       url: '/profile',
       icon: Inbox,
     },
+    {
+      title: 'Chat',
+      url: '/chat',
+      icon: Inbox,
+    },
   ],
 };
 
@@ -40,7 +45,7 @@ export default function SidebarLeft({ ...props }: React.ComponentProps<typeof Si
     isActive: pathname.startsWith(item.url),
   }));
   return (
-    <Sidebar className="top-(--header-height) h-[calc(100svh-var(--header-height))]!" {...props}>
+    <Sidebar className="top-(--header-height) " {...props}>
       <SidebarHeader></SidebarHeader>
       <SidebarContent>
         <NavMain items={navMainWithActive} />
