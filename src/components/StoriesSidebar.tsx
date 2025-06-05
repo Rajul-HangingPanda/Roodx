@@ -40,7 +40,7 @@ export default function StoriesSidebar() {
     <div className="md:px-2 lg:px-4">
       <button
         ref={buttonRef}
-        className="md:hidden fixed top-[90px] left-3.5 z-50 p-1 bg-[#151515] text-white rounded-md shadow-lg"
+        className="md:hidden h fixed top-[90px] left-3.5 z-50 p-1 bg-[#151515] text-white rounded-md shadow-lg"
         onClick={() => setIsOpen(!isOpen)}
       >
         <Menu className="size-4" />
